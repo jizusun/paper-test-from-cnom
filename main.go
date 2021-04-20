@@ -1,13 +1,13 @@
 // Application which greets you.
 package main
 
-func no_name(a string, b string) bool {
+func noName(a string, b string) bool {
 	if len(a) != len(b) {
 		return false
 	}
 	for x := range b {
 		if a[0] == b[x] {
-			return no_name(utilityFunction(a, 0), utilityFunction(b, x))
+			return noName(utilityFunction(a, 0), utilityFunction(b, x))
 		}
 	}
 	return len(b) == 0
