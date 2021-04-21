@@ -8,7 +8,7 @@ func main() {
 	fmt.Println(result)
 }
 
-// TODO: benchmark
+// TODO: benchmark.
 func noName(a string, b string) bool {
 	if len(a) != len(b) {
 		return false
