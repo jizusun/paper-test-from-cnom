@@ -8,30 +8,33 @@ func main() {
 	fmt.Println(result)
 }
 
+// TODO: benchmark
 func noName(a string, b string) bool {
 	if len(a) != len(b) {
 		return false
 	}
-	for x := range b {
-		if a[0] == b[x] {
-			processedA := utilityFunction(a, 0)
-			processedB := utilityFunction(b, x)
-			fmt.Println(processedA, processedB)
-			return noName(processedA, processedB)
+	countA := countChar(a)
+	countB := countChar(b)
+	if len(countA) != len(countB) {
+		return false
+	}
+	for key, elem := range countA {
+		if elem != countB[key] {
+			return false
 		}
 	}
-	return len(b) == 0
+	return true
 }
 
-func utilityFunction(s string, j int) string {
-	ret := make([]rune, len(s)-1)
-	d := 0
-	for k := range s {
-		if k == j {
-			d = 1
+func countChar(str string) map[string]int {
+	count := make(map[string]int)
+	for _, r := range str {
+		ch := string(r)
+		if val, ok := count[ch]; ok {
+			count[ch] = val + 1
 		} else {
-			ret[k-d] = rune(s[k])
+			count[ch] = 1
 		}
 	}
-	return string(ret)
+	return count
 }

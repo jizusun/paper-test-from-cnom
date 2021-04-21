@@ -21,6 +21,7 @@ func Test_noName(t *testing.T) {
 		{"all empty", args{a: "", b: ""}, true},
 		{"same letters but with different order", args{a: "cat", b: "tac"}, true},
 		{"recurring letters", args{a: "aaa", b: "aaa"}, true},
+		{"same length but different letters", args{a: "abaa", b: "abbc"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -40,29 +41,6 @@ func Test_main(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			main()
-		})
-	}
-}
-
-func Test_utilityFunction(t *testing.T) {
-	type args struct {
-		s string
-		j int
-	}
-	tests := []struct {
-		name string
-		args args
-		want string
-	}{
-		{"simple", args{"abc", 0}, "bc"},
-		{"simple 1", args{"abc", 1}, "ac"},
-		{"simple 1", args{"abc", 2}, "ab"},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := utilityFunction(tt.args.s, tt.args.j); got != tt.want {
-				t.Errorf("utilityFunction() = %v, want %v", got, tt.want)
-			}
 		})
 	}
 }

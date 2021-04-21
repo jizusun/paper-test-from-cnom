@@ -1,5 +1,7 @@
 1. 下面的代码是做什么的？用Python/C/C++/Java或其他你擅长的语言重新实现它。注意，在重新实现时不可照搬伪代码的逻辑，而需要在对样例代码理解的基础上使用更简洁高效的方式。
 
+答：如果两个字符串包含相同的字符（字符出现的顺序不重要），返回true，否则返回false。
+
 ```
  1: def Boolean no_name(a : String, b : String)
  2:     if a.length != b.length
