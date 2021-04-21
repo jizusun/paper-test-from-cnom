@@ -1,6 +1,8 @@
 1. 下面的代码是做什么的？用Python/C/C++/Java或其他你擅长的语言重新实现它。注意，在重新实现时不可照搬伪代码的逻辑，而需要在对样例代码理解的基础上使用更简洁高效的方式。
 
-答：如果两个字符串包含相同的字符（字符出现的顺序不重要），返回true，否则返回false。
+答：
+- 代码是做什么的：如果两个字符串包含相同的字符（每个字符出现的次数也要一样，但字符出现的顺序不重要），返回true，否则返回false。
+- 重新实现（Go）:[main.go](main.go)
 
 ```
  1: def Boolean no_name(a : String, b : String)
@@ -31,6 +33,7 @@
 ```
 
 2. 为你在上一题中实现的代码编写单元测试。
+- 单元测试（Go）:[main_test.go](main_test.go)
 
 3. 实现[Python 3的max函数](https://docs.python.org/3/library/functions.html#max)。需要实现 Python 3 标准库的 max 完整的 API，包括 key, default 等 keyword only 参数的支持。考察点不是基础算法，而是工程上去写用于生产的代码需要关注的点：API 的设计，文档，代码逻辑的清晰等。
 
